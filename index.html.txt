@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image with Text</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("abe.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* dark overlay so text is readable */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .text p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* mobile tweak */
+    @media (max-width: 600px) {
+      .text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="overlay"></div>
+
+    <div class="text">
+      <h1>so so so handsome</h1>
+      <p>handsome bobansome</p>
+    </div>
+  </div>
+
+</body>
+</html>
