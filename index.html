@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image with Text</title>
+  <title>Video Site</title>
 
   <style>
     * {
@@ -22,42 +22,51 @@
       position: relative;
       width: 100vw;
       height: 100vh;
-      background-image: url("abe.jpg");
-      background-size: cover;
-      background-position: center;
     }
 
-    /* dark overlay so text is readable */
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-    }
-
-    .text {
+    video {
       position: absolute;
       top: 50%;
       left: 50%;
+      min-width: 100%;
+      min-height: 100%;
       transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    /* dark overlay for readability */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    /* bottom-aligned text */
+    .text {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
       color: white;
       padding: 20px;
+      z-index: 2;
     }
 
     .text h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
     }
 
     .text p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.9;
     }
 
-    /* mobile tweak */
     @media (max-width: 600px) {
       .text h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -65,13 +74,22 @@
 <body>
 
   <div class="container">
+
+    <video autoplay muted loop playsinline>
+      <source src="baby.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
     <div class="overlay"></div>
 
     <div class="text">
-      <h1>so so so handsome</h1>
-      <p>handsome bobansome</p>
+      <h1>Your Title Here</h1>
+      <p>Your subtitle or message here</p>
     </div>
+
   </div>
 
 </body>
 </html>
+
+
